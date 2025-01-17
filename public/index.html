@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Web Design Mastery | The Lights</title>
+  </head>
+  <body>
+    
+    <nav class="navbar">
+      <div class="nav__container">
+        <a href="#" class="nav__logo">
+          <img src="assets/Group 17.png" alt="logo" />
+        </a>
+        
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#header" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">Featured Books</a>
+            </li>
+            <li class="nav__item">
+              <a href="#cast" class="nav__link">Authors & Scholars</a>
+            </li>
+            <li class="nav__item">
+              <a href="#gallery" class="nav__link">Gallery</a>
+            </li>
+            <li class="nav__item">
+              <a href="#media" class="nav__link">Media</a>
+            </li>
+          </ul>
+          
+          <div class="nav__buttons" id="authButtons">
+            <a href="login.html" class="nav__btn login">Login</a>
+            <a href="signup.html" class="nav__btn signup">Sign Up</a>
+            <button id="logout-button" onclick="logout()" style="display: none;">Logout</button>
+        </div>
+        </div>
+        
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+    </nav>
+    <header class="header" id="header">
+      <div class="section__container header__container">
+        
+        <img src="assets/Frame 3.png" alt="The Lights Logo" class="hero-logo" />
+        
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="section__container about__container">
+        <div class="about__grid">
+          <div class="about__content">
+            <p>Shaikhul-Islam Muhammad ibn Abdul-Wahhab's</p>
+            <h4>The Three Fundamental Principles Of Islam And Their Proofs</h4>
+            <p>
+              The subject matter of this tremendous treatise is to single out Allah alone in His Lordship and worship, 
+              and the tremendous importance and station of the Messenger Muhammad (May the peace and blessings of Allah be upon him),
+               and that his is the example to be followed.
+            </p>
+          </div>
+          <div class="about__image image__1">
+            <img src="assets/book1.png" alt="about" />
+          </div>
+          <div class="about__image">
+            <img src="assets/book2.png" alt="about" />
+          </div>
+          <div class="about__content">
+            <p>Shaikh ‘Abdullah Ibn Humayd's</p>
+            <h4>Tawhid & The Pure Salafi Creed</h4>
+            <p>
+              Tawhid is the greatest aspect of Islam as within it is the clarification of Allah’s Lordship, 
+              His Names and Attributes and the obligation of worshipping Him alone. 
+            </p>
+          </div>
+        </div>
+        <div class="about__grid">
+          <div class="about__content">
+            <p>Shaikh Abdur-Rahman As-Sa’di | Darussalam Publications</p>
+            <h4>Tafsir As-Sa’di </h4>
+            <p>
+              Tafsir As-Sa’di is a straightforward, easy to read, easy to understand explanation of the meaning of Qur’anic Ayat and statements.
+               In addition to the simplicity of Ibn Sa’di’s writing. it is also articulate and eloquent.
+            </p>
+          </div>
+          <div class="about__image image__1">
+            <img src="assets/book3.png" alt="about" />
+          </div>
+          <div class="about__image">
+            <img src="assets/book4.png" alt="about" />
+          </div>
+          <div class="about__content">
+            <p>Imam Ibn al-Qayyim | Hikmah Publications</p>
+            <h4>The Disease And The Cure</h4>
+            <p>
+              This book was a response to a question posed by an individual who was afflicted by a calamity, finding himself in a dire and needy state.
+               He Acknowledged to himself that if he failed to rid himself of this ailment it would destroy him in this life and the next. 
+            </p>
+          </div>
+        </div>
+        <div class="about__grid">
+          <div class="about__content">
+            <p>Prophetic Morals And Etiquettes:</p>
+            <h4>Al-Adab Al-Mufrad</h4>
+            <p>
+              Imam Al Bukhari Abu Abdullah Muhammad bin Ismail | Commentary by Shaikh Al-Albaani
+              This is the great compilation “al-Adab al-Mufrad” by the renowned muhaddith of Islam,
+              Imam Bukhari [may Allah have mercy on him] on the subject of “Manners in Islam” 
+              More than 1300 ahadith on personal manners, family affairs, human rights, social obligations…
+            </p>
+          </div>
+          <div class="about__image image__1">
+            <img src="assets/about-2.jpg" alt="about" />
+          </div>
+          <div class="about__image">
+            <img src="assets/about-1.jpg" alt="about" />
+          </div>
+          <div class="about__content">
+            <p>in Removal of Calamities and Victory over Enemies</p>
+            <h4>The Effect of Tawhid</h4>
+            <p>
+              This is a translation of a very precious and valuable passage from the book 
+              ‘al-Radd ‘alal-Bakri’, also known with the title, ‘Talkhis al-Istighathah’. 
+              It highlights the effect of Tawhid in the removal of calamities and conversely,
+               the role of shirk and innovation in bringing calamities and disasters. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="section__container banner__container">
+        <div class="banner__content">
+          <span><i class="ri-double-quotes-r"></i></span>
+          <p>
+            If anyone travels on a road in search of knowledge, 
+            Allah will cause him to travel on one of the roads of Paradise. 
+            The angels will lower their wings in their great pleasure with one who seeks knowledge, 
+            the inhabitants of the heavens and the Earth and the fish in the deep waters will ask forgiveness for the learned man. 
+            The superiority of the learned man over the devout is like that of the moon, on the night when it is full, over the rest of the stars. 
+            The learned are the heirs of the Prophets, and the Prophets leave neither dinar nor dirham, leaving only knowledge, 
+            and he who takes it takes an abundant portion.
+          </p>
+          <h5>"Prophet Muhammad ﷺ"</h5>
+          <h5>~Sunan Abi Dawud 3641, Grade:	 Sahih (Al-Albani)~</h5>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container cast__container" id="cast"> 
+      <p class="section__subheader">"ANWAR AL ILM" FEATURED AUTHORS & SCHOLARS</p>
+      <h2 class="section__header">Authors & Scholars</h2>
+      <div class="cast__grid">
+        <div class="cast__card">
+          <img src="assets/cast-1.jpg" alt="cast" />
+          <div class="cast__details">
+            <h4>Muhammad Nasir al-Din al-Albani رحمه الله</h4>
+            <p>Al-Muhaddith al-'Alami</p>
+            <a href="#">SEE MORE</a>
+          </div>
+        </div>
+        <div class="cast__card">
+          <img src="assets/cast-2.jpg" alt="cast" />
+          <div class="cast__details">
+            <h4>Muhammad bin Salih Al-Uthaymin رحمه الله</h4>
+            <p>	Al-Faqih</p>
+            <a href="#">SEE MORE</a>
+          </div>
+        </div>
+        <div class="cast__card">
+          <img src="assets/cast-3.jpg" alt="cast" />
+          <div class="cast__details">
+            <h4>Muḥammad ibn ʿAbd al-Wahhāb رحمه الله</h4>
+            <p>	Imam, Shaykh</p>
+            <a href="#">SEE MORE</a>
+          </div>
+        </div>
+        <div class="cast__card">
+          <img src="assets/vss.png" alt="cast" />
+          <div class="cast__details">
+            <h4>sheikh abdullah nasir rehmani<br> حفظه الله تعالى </h4>
+            <p>	Muhadith e Pakistan</p>
+            <a href="#">SEE MORE</a>
+          </div>
+        </div>
+        <div class="cast__card">
+          <img src="assets/aaa.png" alt="cast" />
+          <div class="cast__details">
+            <h4>Ustadh Abdulrahman Hassan<br> حفظه الله تعالى </h4>
+            <p>	An Imaam and A Da’ee</p>
+            <a href="#">SEE MORE</a>
+          </div>
+        </div>
+        <div class="cast__card">
+          <img src="assets/abb.png" alt="cast" />
+          <div class="cast__details">
+            <h4>Ustadh Muhammad Tim Humble <br> حفظه الله تعالى</h4>
+            <p>	Graduate Ustadh from University of Madinah</p>
+            <a href="#">SEE MORE</a>
+          </div>
+        </div>
+      </div>
+      <div class="cast__footer">
+        <button class="btn cast__btn">View All Authors & Scholars</button>
+      </div>
+    </section>
+
+    <section class="watch">
+      <div class="section__container watch__container">
+        <p>LET THE ILM LIGHT YOUR WAY</p>
+        <h4>VISIT NOW</h4>
+        
+        
+      </div>
+    </section>
+
+    <section class="section__container gallery__container" id="gallery">
+      <p class="section__subheader">"THE LIGHTS" STILLS</p>
+      <h2 class="section__header">GALLERY</h2>
+      <div class="gallery__grid">
+        <img src="assets/1.png" alt="gallery" />
+        <img src="assets/2.png" alt="gallery" />
+        <img src="assets/3.png" alt="gallery" />
+        <img src="assets/4.png" alt="gallery" />
+        <img src="assets/5.png" alt="gallery" />
+        <img src="assets/6.png" alt="gallery" />
+        <img src="assets/7.png" alt="gallery" />
+        <img src="assets/8.png" alt="gallery" />
+        <img src="assets/9.png" alt="gallery" />
+        <img src="assets/10.png" alt="gallery" />
+        <img src="assets/11.png" alt="gallery" />
+        <img src="assets/12.png" alt="gallery" />
+      </div>
+    </section>
+
+    <section class="connect">
+      <div class="section__container connect__container">
+        <p>Connect With Us</p>
+        <h4>GET CONNECTED</h4>
+        <div class="connect__socials">
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-fill"></i></a>
+          <a href="#"><i class="ri-youtube-fill"></i></a>
+          <a href="#"><i class="ri-heart-3-fill"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container media__container" id="media">
+      <p class="section__subheader">INTERVIEWS & LECTURES</p>
+      <h2 class="section__header">PRESS & MEDIA</h2>
+      <div class="media__grid">
+        <div class="media__card">
+          <img src="assets/media 1.png" alt="media" />
+          <div class="media__details">
+            <p>Nahd Studio.</p>
+            <h4>Nahd Studio creates high-quality Islamic content, like Seerat Kahani and Quranic Tafseer, using advanced 4K technology to inspire a global audience.</h4>
+            <a href="#">Visit Site</a>
+          </div>
+        </div>
+        <div class="media__card">
+          <img src="assets/media 2.png" alt="media" />
+          <div class="media__details">
+            <p>Burooj Institute</p>
+            <h4>Illuminating hearts and minds by sharing the timeless wisdom of the Quran. Empowering individuals through education that inspires faith, understanding, and spiritual growth.</h4>
+            <a href="#">Visit Site</a>
+          </div>
+        </div>
+        <div class="media__card">
+          <img src="assets/15.png" alt="media" />
+          <div class="media__details">
+            <p>Youth Club</p>
+            <h4>Youth Club (YC) is a non-profit inspiring youth to align their potential with Islamic values, fostering skilled individuals who fulfill religious duties and contribute to their communities.</h4>
+            <a href="#">Visit Site</a>
+          </div>
+        </div>
+        <div class="media__card">
+          <img src="assets/16.png" alt="media" />
+          <div class="media__details">
+            <p>Madinah College London</p>
+            <h4>
+              Madinah College excels in teaching Arabic to non-Arabic speakers and spreading Islamic knowledge through high-quality education. It houses centers for Arabic, Quran, and general Islamic studies.</h4>
+            <a href="#">Visit Site</a>
+          </div>
+        </div>
+      </div>
+      <div class="media__footer">
+        <button class="btn media__btn">SEE ALL PRESS & MEDIA</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__content">
+          <div class="footer__logo">
+            <a href="#">
+              <img src="assets/Frame 3.png" alt="Anwar Al Ilm Logo" />
+            </a>
+          </div>
+          
+          <div class="footer__grid">
+            <div class="footer__section">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">Featured Books</a></li>
+                <li><a href="#cast">Authors & Scholars</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#media">Media</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer__section">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Free Downloads</a></li>
+                <li><a href="#">Reading Lists</a></li>
+                <li><a href="#">Study Guides</a></li>
+                <li><a href="#">Audio Books</a></li>
+                <li><a href="#">E-Books</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer__section">
+              <h4>Contact Us</h4>
+              <ul>
+                <li><i class="ri-mail-line"></i> info@anwaralilm.com</li>
+                <li><i class="ri-phone-line"></i> +971 xxxxxxxxx</li>
+                <li><i class="ri-map-pin-line"></i> 123 ABCDEFGH abcdefg street, ILM 10001</li>
+              </ul>
+            </div>
+    
+            <div class="footer__section">
+              <h4>Connect With Us</h4>
+              <div class="footer__social">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-instagram-fill"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="footer__bottom">
+            <p>&copy; 2025 Anwar Al Ilm. All rights reserved.</p>
+            <div class="footer__links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    
+  </body>
+</html>

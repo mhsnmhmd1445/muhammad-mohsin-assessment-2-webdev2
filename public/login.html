@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        :root {
+            --navy: #2A2D3E;
+            --gold: #C6A96D;
+            --light-gold: #D4BC8B;
+            --white: #FFFFFF;
+            --dark-navy: #1E2132;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: grid;
+            place-items: center;
+            background: var(--navy);
+            background-image: radial-gradient(circle at 50% 50%, var(--dark-navy) 0%, var(--navy) 100%);
+            padding: clamp(1rem, 5vw, 2rem);
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.03);
+            padding: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+            border-radius: clamp(1rem, 2vw, 1.5rem);
+            box-shadow: 0 clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 4rem) rgba(0, 0, 0, 0.2);
+            width: min(90%, 400px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(198, 169, 109, 0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--light-gold));
+            border-radius: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) 0 0;
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 clamp(1.5rem, 4vw, 2.5rem) clamp(3rem, 6vw, 5rem) rgba(0, 0, 0, 0.3);
+            border-color: rgba(198, 169, 109, 0.2);
+        }
+
+        h2 {
+            color: var(--white);
+            font-size: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            position: relative;
+            padding-bottom: clamp(0.5rem, 2vw, 1rem);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(50px, 30%);
+            height: 2px;
+            background: var(--gold);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .form-container:hover h2::after {
+            width: min(100px, 60%);
+        }
+
+        .form-group {
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+            border: 1px solid rgba(198, 169, 109, 0.2);
+            border-radius: clamp(0.5rem, 1.5vw, 0.75rem);
+            font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--white);
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(198, 169, 109, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        input:hover {
+            border-color: var(--light-gold);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.3s ease;
+        }
+
+        input:focus::placeholder {
+            color: rgba(198, 169, 109, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: clamp(0.75rem, 2vw, 1rem);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            color: var(--navy);
+            border: none;
+            border-radius: clamp(0.5rem, 1.5vw, 0.75rem);
+            font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 clamp(0.25rem, 1vw, 0.5rem) clamp(0.75rem, 2vw, 1.5rem) rgba(198, 169, 109, 0.4);
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        button.loading {
+            background: var(--gold);
+            pointer-events: none;
+        }
+
+        button.loading::after {
+            content: '';
+            position: absolute;
+            width: clamp(16px, 4vw, 20px);
+            height: clamp(16px, 4vw, 20px);
+            top: 50%;
+            left: 50%;
+            margin: clamp(-8px, -2vw, -10px) 0 0 clamp(-8px, -2vw, -10px);
+            border: 2px solid rgba(42, 45, 62, 0.3);
+            border-top-color: var(--navy);
+            border-radius: 50%;
+            animation: spin 0.8s infinite linear;
+        }
+
+        /* Decorative elements */
+        .form-container::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, var(--gold) 20%, transparent 21%);
+            opacity: 0.2;
+        }
+
+
+        /* Updated cursor styles with glow effects */
+.custom-cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    box-shadow: 0 0 10px rgba(198, 168, 117, 0.3),
+                0 0 20px rgba(198, 168, 117, 0.2);
+}
+
+.custom-cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-out;
+    box-shadow: 0 0 15px rgba(198, 168, 117, 0.15);
+}
+
+.custom-cursor.cursor-hover {
+    width: 12px;
+    height: 12px;
+    background: rgba(198, 168, 117, 0.8);
+    box-shadow: 0 0 15px rgba(198, 168, 117, 0.5),
+                0 0 30px rgba(198, 168, 117, 0.3);
+}
+
+.custom-cursor-outline.cursor-hover {
+    width: 50px;
+    height: 50px;
+    border-color: rgba(198, 168, 117, 0.6);
+    box-shadow: 0 0 20px rgba(198, 168, 117, 0.25);
+}
+
+/* Click effect */
+.cursor-clicking {
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(198, 168, 117, 1);
+    box-shadow: 0 0 20px rgba(198, 168, 117, 0.6),
+                0 0 40px rgba(198, 168, 117, 0.4);
+}
+
+.cursor-outline-clicking {
+    transform: translate(-50%, -50%) scale(1.2);
+    border-color: rgba(198, 168, 117, 0.2);
+    box-shadow: 0 0 30px rgba(198, 168, 117, 0.3);
+}
+
+/* Hide default cursor */
+* {
+    cursor: none !important;
+}
+
+/* Show default cursor for mobile devices */
+@media (max-width: 768px) {
+    .custom-cursor,
+    .custom-cursor-outline {
+        display: none;
+    }
+    
+    * {
+        cursor: auto !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Welcome Back</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>
